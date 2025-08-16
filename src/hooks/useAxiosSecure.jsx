@@ -6,8 +6,8 @@ import useAuth from "./UseAuth";
 
 // Create Axios instance
  const AxiosSecure = axios.create({
-  // baseURL: "https://profetional-beckend.vercel.app", 
-  baseURL: "http://localhost:5000", 
+  baseURL: "https://noorvia-beckend.vercel.app", 
+  // baseURL: "http://localhost:5000", 
  
 });
 

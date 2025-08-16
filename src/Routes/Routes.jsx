@@ -11,6 +11,11 @@ import useAdmin from "../hooks/useAdmin";
 import Loading from "../components/Loading/Loading";
 import Profile from "../pages/Dashboard/Profile";
 import NotFound from "../pages/NotFoumd";
+import CompanyProfile from "../pages/CompanyProfile/CompanyProfile";
+import Contact from "../pages/Contact/Contact";
+import InvestorConnection from "../pages/InvestorConnection/InvestorConnection";
+import ProductsServices from "../pages/ProductsServices/ProductsServices";
+import PerformersClub from "../pages/PerformersClub/PerformersClub";
 
 
 // Custom wrapper to restrict routes to admins
@@ -39,6 +44,30 @@ export const router = createBrowserRouter([
         path: "signup",
         element: <SignUp></SignUp>,
       },
+      {
+        path: "/company-profile",
+        element: <CompanyProfile></CompanyProfile>,
+      },
+
+      {
+        path: "/Contact",
+        element: <Contact></Contact>,
+      },
+      {
+        path: "/investor-connect",
+        element: <InvestorConnection></InvestorConnection>,
+      },
+
+       {
+        path: "/products-services",
+        element: <ProductsServices></ProductsServices>,
+      },
+       {
+        path: "/performers-club",
+        element: <PerformersClub></PerformersClub>,
+      },
+
+
  
     ],
   },
