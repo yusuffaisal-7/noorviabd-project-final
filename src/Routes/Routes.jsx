@@ -16,6 +16,9 @@ import Contact from "../pages/Contact/Contact";
 import InvestorConnection from "../pages/InvestorConnection/InvestorConnection";
 import ProductsServices from "../pages/ProductsServices/ProductsServices";
 import PerformersClub from "../pages/PerformersClub/PerformersClub";
+import AddTeam from "../pages/Dashboard/AddTeam";
+import ShowTeamMembers from "../pages/Dashboard/ShowTeamMembers";
+import ShowPerformersClub from "../pages/Dashboard/ShowPerformersClub";
 
 
 // Custom wrapper to restrict routes to admins
@@ -90,7 +93,36 @@ export const router = createBrowserRouter([
           
         ),
       },
-     
+     {
+        path: "AddTeam",
+        element: (
+        //  <AdminRoute>
+              <AddTeam></AddTeam>
+        //  </AdminRoute>
+           
+          
+        ),
+      },
+       {
+        path: "showTeamMembers",
+        element: (
+        //  <AdminRoute>
+              <ShowTeamMembers></ShowTeamMembers>
+        //  </AdminRoute>
+           
+          
+        ),
+      },
+      {
+        path: "showPerformersClub",
+        element: (
+        //  <AdminRoute>
+             <ShowPerformersClub></ShowPerformersClub>
+        //  </AdminRoute>
+           
+          
+        ),
+      },
      
       // user routes
       {

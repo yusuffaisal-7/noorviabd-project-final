@@ -192,11 +192,11 @@ import { AuthContext } from "../Providers/AuthProvider";
 
 const Dashboard = () => {
   const { user, logOut } = useContext(AuthContext);
-  // const [isAdmin, isAdminLoading] = useAdmin();
+  const [isAdmin, isAdminLoading] = useAdmin();
 
   // 🔧 Temporary mock for testing
-const isAdmin = true;
-const isAdminLoading = false;
+// const isAdmin = true;
+// const isAdminLoading = false;
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const navigate = useNavigate();
@@ -329,7 +329,9 @@ const isAdminLoading = false;
               {user && isAdmin && (
                 <>
                   {renderNavLink("/dashboard/manage-users", <FaTasks className="text-xl" />, "Manage Users")}
-                  
+                   {renderNavLink("/dashboard/AddTeam", <FaTasks className="text-xl" />, "Add Team Members")}
+                  {renderNavLink("/dashboard/showTeamMembers", <FaTasks className="text-xl" />, "Show All Members")}
+                   {renderNavLink("/dashboard/showPerformersClub", <FaTasks className="text-xl" />, "Show PerformersClub")}
                 </>
               )}
             </nav>

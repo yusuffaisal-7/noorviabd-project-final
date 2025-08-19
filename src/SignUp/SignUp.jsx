@@ -4,10 +4,11 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 import SocialLogin from "../components/SocialLogin";
-import useAxiosPublic from "../hooks/UseAxiosPublic";
+
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import { getAuth, signOut } from 'firebase/auth';
 import { AuthContext } from "../Providers/AuthProvider";
+import useAxiosPublic from "../hooks/useAxiosPublic";
 
 const SignUp = () => {
     const [disabled, setDisabled] = useState(true);
