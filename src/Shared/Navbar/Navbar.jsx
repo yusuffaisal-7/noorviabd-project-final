@@ -179,6 +179,8 @@
 
 // export default Navbar;
 
+
+
 import React, { useState, useContext, useEffect } from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
@@ -393,3 +395,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

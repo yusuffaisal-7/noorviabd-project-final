@@ -19,6 +19,7 @@ import PerformersClub from "../pages/PerformersClub/PerformersClub";
 import AddTeam from "../pages/Dashboard/AddTeam";
 import ShowTeamMembers from "../pages/Dashboard/ShowTeamMembers";
 import ShowPerformersClub from "../pages/Dashboard/ShowPerformersClub";
+import ShowContactData from "../pages/Dashboard/ShowContactData";
 
 
 // Custom wrapper to restrict routes to admins
@@ -86,9 +87,9 @@ export const router = createBrowserRouter([
       {
         path: "manage-users",
         element: (
-        //  <AdminRoute>
+         <AdminRoute>
                <ManageUsers />
-        //  </AdminRoute>
+          </AdminRoute>
            
           
         ),
@@ -96,9 +97,9 @@ export const router = createBrowserRouter([
      {
         path: "AddTeam",
         element: (
-        //  <AdminRoute>
+         <AdminRoute>
               <AddTeam></AddTeam>
-        //  </AdminRoute>
+          </AdminRoute>
            
           
         ),
@@ -106,9 +107,9 @@ export const router = createBrowserRouter([
        {
         path: "showTeamMembers",
         element: (
-        //  <AdminRoute>
+         <AdminRoute>
               <ShowTeamMembers></ShowTeamMembers>
-        //  </AdminRoute>
+          </AdminRoute>
            
           
         ),
@@ -116,9 +117,19 @@ export const router = createBrowserRouter([
       {
         path: "showPerformersClub",
         element: (
-        //  <AdminRoute>
+         <AdminRoute>
              <ShowPerformersClub></ShowPerformersClub>
-        //  </AdminRoute>
+          </AdminRoute>
+           
+          
+        ),
+      },
+      {
+        path: "showContact",
+        element: (
+         <AdminRoute>
+            <ShowContactData></ShowContactData>
+        </AdminRoute>
            
           
         ),

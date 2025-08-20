@@ -332,6 +332,7 @@ const Dashboard = () => {
                    {renderNavLink("/dashboard/AddTeam", <FaTasks className="text-xl" />, "Add Team Members")}
                   {renderNavLink("/dashboard/showTeamMembers", <FaTasks className="text-xl" />, "Show All Members")}
                    {renderNavLink("/dashboard/showPerformersClub", <FaTasks className="text-xl" />, "Show PerformersClub")}
+                   {renderNavLink("/dashboard/showContact", <FaTasks className="text-xl" />, "Show Contact Data")}
                 </>
               )}
             </nav>
