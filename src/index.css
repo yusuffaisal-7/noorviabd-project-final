@@ -1,2 +1,189 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+/* Montserrat Font for Hero Section */
+.font-montserrat-semibold {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+/* Custom Color Theme Palette */
+:root {
+  /* Primary (Main Brand) */
+  --royal-blue: #0A3D91;
+  --royal-blue-hover: #08306B;
+  
+  /* Accent (Secondary) */
+  --gold-sand: #D0A96A;
+  --gold-sand-hover: #B8945A;
+  
+          /* Neutrals (Light Theme Base) */
+        --bg-primary: #F9FAFB;
+        --bg-card: #FAF3E0;
+        --border-divider: #E5E7EB;
+        --text-primary: #111827;
+        --text-secondary: #6B7280;
+  
+  /* Support Colors */
+  --success: #2E7D32;
+  --error: #B91C1C;
+  --info: #0284C7;
+}
+
+/* Global Styles */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Custom Utility Classes */
+.bg-royal-blue {
+  background-color: var(--royal-blue);
+}
+
+.bg-royal-blue-hover:hover {
+  background-color: var(--royal-blue-hover);
+}
+
+.text-royal-blue {
+  color: var(--royal-blue);
+}
+
+.text-royal-blue-hover:hover {
+  color: var(--royal-blue-hover);
+}
+
+.bg-gold-sand {
+  background-color: var(--gold-sand);
+}
+
+.bg-gold-sand-hover:hover {
+  background-color: var(--gold-sand-hover);
+}
+
+.bg-light-cream {
+  background-color: #FAF3E0;
+}
+
+.text-gold-sand {
+  color: var(--gold-sand);
+}
+
+.text-gold-sand-hover:hover {
+  color: var(--gold-sand-hover);
+}
+
+.border-royal-blue {
+  border-color: var(--royal-blue);
+}
+
+.border-gold-sand {
+  border-color: var(--gold-sand);
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: var(--royal-blue);
+  color: white;
+  border: 2px solid var(--royal-blue);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--royal-blue-hover);
+  border-color: var(--royal-blue-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(10, 61, 145, 0.3);
+}
+
+.btn-secondary {
+  background-color: var(--gold-sand);
+  color: var(--text-primary);
+  border: 2px solid var(--gold-sand);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--gold-sand-hover);
+  border-color: var(--gold-sand-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(208, 169, 106, 0.3);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--royal-blue);
+  border: 2px solid var(--royal-blue);
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--royal-blue);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Card Styles */
+.card-custom {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-divider);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.card-custom:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Link Styles */
+.link-custom {
+  color: var(--royal-blue);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.link-custom:hover {
+  color: var(--royal-blue-hover);
+}
+
+.link-custom::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--gold-sand);
+  transition: width 0.3s ease;
+}
+
+.link-custom:hover::after {
+  width: 100%;
+}
+
+/* Success, Error, Info States */
+.text-success {
+  color: var(--success);
+}
+
+.text-error {
+  color: var(--error);
+}
+
+.text-info {
+  color: var(--info);
+}
+
+.bg-success {
+  background-color: var(--success);
+}
+
+.bg-error {
+  background-color: var(--error);
+}
+
+.bg-info {
+  background-color: var(--info);
+}

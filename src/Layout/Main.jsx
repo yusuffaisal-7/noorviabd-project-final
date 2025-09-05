@@ -3,6 +3,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
 import Footer from "../Shared/Footer/Footer";
 import Loading from '../components/Loading/Loading';
+import AIChatbot from '../components/AIChatbot';
 
 const Main = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -22,10 +23,11 @@ const Main = () => {
         <div className="min-h-screen flex flex-col w-full bg-gray-100">
             {isLoading && <Loading />}
             {!noHeaderFooter && <Navbar />}
-            <main className="flex-grow w-full pt-16">
+            <main className="flex-grow w-full">
                 <Outlet />
             </main>
             {!noHeaderFooter && <Footer />}
+            <AIChatbot />
         </div>
     );
 };

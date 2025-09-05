@@ -2,7 +2,7 @@ import { FaGoogle } from "react-icons/fa";
 
 import { useNavigate } from "react-router-dom";
 import useAuth from "../hooks/UseAuth";
-import useAxiosPublic from "../hooks/UseAxiosPublic";
+import useAxiosPublic from "../hooks/useAxiosPublic";
 
 const GoogleIcon = () => (
     <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
@@ -48,13 +48,13 @@ const SocialLogin = () => {
 
     return (
         <div className="flex flex-col items-center w-full">
-            <div className="divider text-gray-400 my-6">OR</div>
+            <div className="divider text-[#6B7280] my-6">OR</div>
             <button 
                 onClick={handleGoogleSignIn} 
-                className="w-full flex items-center justify-center px-6 py-2.5 rounded-lg border border-gray-300 bg-white hover:bg-gray-50 transition-colors duration-200 text-gray-600 font-medium shadow-sm hover:shadow-md group"
+                className="w-full flex items-center justify-center px-6 py-2.5 rounded-lg border border-[#E5E7EB] bg-[#FAF3E0] hover:bg-[#F9FAFB] transition-colors duration-200 text-[#111827] font-medium shadow-sm hover:shadow-md group"
             >
                 <GoogleIcon />
-                <span className="group-hover:text-gray-900">Sign in with Google</span>
+                <span className="group-hover:text-[#0A3D91]">Sign in with Google</span>
             </button>
         </div>
     );

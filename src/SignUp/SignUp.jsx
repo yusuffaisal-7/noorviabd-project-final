@@ -114,19 +114,19 @@ const SignUp = () => {
                     title: 'Account Created Successfully!',
                     html: `
                         <div class="space-y-4">
-                            <div class="text-green-500">
+                            <div class="text-[#2E7D32]">
                                 <svg class="mx-auto h-16 w-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                 </svg>
                             </div>
-                            <p class="text-gray-600">Please verify your email address:</p>
-                            <p class="font-semibold text-[#005482]">${data.email}</p>
-                            <p class="text-sm text-gray-500 mt-2">A verification link has been sent to your email. Please verify your email to activate your account.</p>
-                            <p class="text-sm text-gray-500">You cannot log in until your email is verified.</p>
+                            <p class="text-[#6B7280]">Please verify your email address:</p>
+                            <p class="font-semibold text-[#0A3D91]">${data.email}</p>
+                            <p class="text-sm text-[#6B7280] mt-2">A verification link has been sent to your email. Please verify your email to activate your account.</p>
+                            <p class="text-sm text-[#6B7280]">You cannot log in until your email is verified.</p>
                         </div>
                     `,
                     icon: 'success',
-                    confirmButtonColor: '#DA3A60',
+                    confirmButtonColor: '#0A3D91',
                     confirmButtonText: 'Go to Login',
                     allowOutsideClick: false
                 });
@@ -139,35 +139,39 @@ const SignUp = () => {
                 icon: 'error',
                 title: 'Signup Failed',
                 text: error.message,
-                confirmButtonColor: '#DA3A60'
+                confirmButtonColor: '#0A3D91'
             });
         }
     };
 
     return (
-        <div className="min-h-screen w-full bg-[#005482] flex fixed inset-0">
+        <div className="min-h-screen w-full bg-[#0A3D91] flex fixed inset-0">
             {/* Left Section with Illustration */}
-            <div className="hidden lg:flex lg:w-1/2 bg-[#70C5D7] items-center justify-center p-12">
+            <div className="hidden lg:flex lg:w-1/2 bg-[#FAF3E0] items-center justify-center p-12">
                 <div className="max-w-lg">
-                    <h2 className="text-4xl font-bold text-white mb-6">Join <span className="text-[#FCBB45]">LesonPaw</span> Today!</h2>
-                    <p className="text-xl text-white/90">Connect with a community of educators and learners. Share knowledge, discover resources, and grow together.</p>
-                    {/* <div className="mt-8">
-                        <img 
-                            src={imge1} 
-                            alt="Progress Illustration"
-                            className="w-full max-w-md mx-auto"
-                        />
-                    </div> */}
+                    <h2 className="text-4xl font-bold text-[#111827] mb-6">Join <span className="text-[#0A3D91]">NoorVia BD</span> Today!</h2>
+                    <p className="text-xl text-[#111827]/90 mb-8">Connect with a community of professionals and entrepreneurs. Share knowledge, discover opportunities, and grow together.</p>
+                    
+                    {/* Login Button */}
+                    <div className="text-center">
+                        <p className="text-[#6B7280] mb-4">Already have an account?</p>
+                        <Link 
+                            to="/login" 
+                            className="inline-block bg-[#D0A96A] hover:bg-[#B8945A] text-[#111827] px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                        >
+                            Login Here
+                        </Link>
+                    </div>
                 </div>
             </div>
 
             {/* Right Section with Form */}
-            <div className="w-full lg:w-1/2 bg-white flex items-center justify-center p-6 overflow-y-auto">
+            <div className="w-full lg:w-1/2 bg-[#FAF3E0] flex items-center justify-center p-6 overflow-y-auto">
                 <div className="w-full max-w-md space-y-8">
                     {/* Header */}
                     <div className="text-center mt-8">
-                        <h1 className="text-3xl font-bold text-[#005482] mb-2">Welcome!</h1>
-                        <p className="text-gray-600">Create your account to get started</p>
+                        <h1 className="text-3xl font-bold text-[#0A3D91] mb-2">Welcome!</h1>
+                        <p className="text-[#6B7280]">Create your account to get started</p>
                     </div>
 
                     {/* Sign Up Form */}
@@ -179,16 +183,16 @@ const SignUp = () => {
                                     type="text"
                                     placeholder="Your name *"
                                     {...register("name", { required: "Name is required" })}
-                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#70C5D7] text-[#005482]"
+                                    className="w-full px-4 py-3 border border-[#E5E7EB] rounded-lg focus:outline-none focus:border-[#0A3D91] text-[#111827] transition-colors"
                                 />
                                 {errors.name && (
-                                    <span className="text-[#DA3A60] text-sm mt-1">{errors.name.message}</span>
+                                    <span className="text-[#B91C1C] text-sm mt-1">{errors.name.message}</span>
                                 )}
                             </div>
 
                             {/* Photo Upload */}
                             <div className="space-y-2">
-                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                <label className="block text-sm font-medium text-[#111827] mb-1">
                                     Profile Photo
                                 </label>
                                 <div className="space-y-2">
@@ -202,22 +206,22 @@ const SignUp = () => {
                                         />
                                         <label
                                             htmlFor="photo-upload"
-                                            className="cursor-pointer inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#70C5D7]"
+                                            className="cursor-pointer inline-flex items-center px-4 py-2 border border-[#E5E7EB] rounded-md shadow-sm text-sm font-medium text-[#111827] bg-white hover:bg-[#F9FAFB] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0A3D91] transition-colors"
                                         >
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 text-[#6B7280]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                             </svg>
                                             Choose Photo
                                         </label>
-                                        <span className="text-sm text-gray-500">or</span>
+                                        <span className="text-sm text-[#6B7280]">or</span>
                                     </div>
                                     <input
                                         type="text"
                                         placeholder="Enter photo URL"
                                         {...register("photoURL")}
-                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-[#70C5D7] text-[#005482] text-sm"
+                                        className="w-full px-4 py-2 border border-[#E5E7EB] rounded-lg focus:outline-none focus:border-[#0A3D91] text-[#111827] text-sm transition-colors"
                                     />
-                                    <p className="text-xs text-gray-500">
+                                    <p className="text-xs text-[#6B7280]">
                                         Upload a photo or provide an image URL
                                     </p>
                                 </div>
@@ -229,10 +233,10 @@ const SignUp = () => {
                                     type="email"
                                     placeholder="Your email address *"
                                     {...register("email", { required: "Email is required" })}
-                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#70C5D7] text-[#005482]"
+                                    className="w-full px-4 py-3 border border-[#E5E7EB] rounded-lg focus:outline-none focus:border-[#0A3D91] text-[#111827] transition-colors"
                                 />
                                 {errors.email && (
-                                    <span className="text-[#DA3A60] text-sm mt-1">{errors.email.message}</span>
+                                    <span className="text-[#B91C1C] text-sm mt-1">{errors.email.message}</span>
                                 )}
                             </div>
 
@@ -253,12 +257,12 @@ const SignUp = () => {
                                                 message: "Password must include uppercase, lowercase, number and special character"
                                             }
                                         })}
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#70C5D7] text-[#005482]"
+                                        className="w-full px-4 py-3 border border-[#E5E7EB] rounded-lg focus:outline-none focus:border-[#0A3D91] text-[#111827] transition-colors"
                                     />
                                     <button
                                         type="button"
                                         onClick={() => setShowPassword(!showPassword)}
-                                        className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                                        className="absolute right-3 top-1/2 transform -translate-y-1/2 text-[#6B7280] hover:text-[#111827] transition-colors"
                                     >
                                         {showPassword ? (
                                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -274,12 +278,12 @@ const SignUp = () => {
                                     </button>
                                 </div>
                                 {errors.password && (
-                                    <span className="text-[#DA3A60] text-sm mt-1">{errors.password.message}</span>
+                                    <span className="text-[#B91C1C] text-sm mt-1">{errors.password.message}</span>
                                 )}
                             </div>
                             
                             {/* Captcha Section */}
-                            <div className="space-y-3 p-4 bg-gray-50 rounded-lg">
+                            <div className="space-y-3 p-4 bg-[#F9FAFB] rounded-lg border border-[#E5E7EB]">
                                 <LoadCanvasTemplate />
                                 <div className="flex gap-2">
                                     <input
@@ -287,13 +291,13 @@ const SignUp = () => {
                                         name="captcha"
                                         id="signupCaptcha"
                                         placeholder="Enter captcha *"
-                                        className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#70C5D7] text-[#005482]"
+                                        className="flex-1 px-4 py-3 border border-[#E5E7EB] rounded-lg focus:outline-none focus:border-[#0A3D91] text-[#111827] transition-colors"
                                         required
                                     />
                                     <button
                                         type="button"
                                         onClick={() => handleValidateCaptcha(document.getElementById('signupCaptcha'))}
-                                        className="px-6 py-3 bg-[#FCBB45] hover:bg-[#FCBB45]/90 text-white font-medium rounded-lg transition-all"
+                                        className="px-6 py-3 bg-[#D0A96A] hover:bg-[#B8945A] text-[#111827] font-medium rounded-lg transition-all"
                                     >
                                         Verify
                                     </button>
@@ -308,11 +312,11 @@ const SignUp = () => {
                                 id="terms"
                                 checked={termsAccepted}
                                 onChange={(e) => setTermsAccepted(e.target.checked)}
-                                className="w-4 h-4 border-gray-300 rounded text-[#DA3A60] focus:ring-[#DA3A60]"
+                                className="w-4 h-4 border-[#E5E7EB] rounded text-[#0A3D91] focus:ring-[#0A3D91]"
                             />
-                            <label htmlFor="terms" className="ml-2 text-sm text-gray-600">
+                            <label htmlFor="terms" className="ml-2 text-sm text-[#6B7280]">
                                 I have read and agree to all{' '}
-                                <Link to="/terms" className="text-[#70C5D7] hover:text-[#005482]" target="_blank">
+                                <Link to="/terms" className="text-[#0A3D91] hover:text-[#08306B] transition-colors" target="_blank">
                                     Terms & conditions
                                 </Link>
                             </label>
@@ -322,7 +326,7 @@ const SignUp = () => {
                         <button
                             type="submit"
                             disabled={disabled || !termsAccepted}
-                            className="w-full py-3 px-6 bg-[#DA3A60] hover:bg-[#DA3A60]/90 text-white font-medium rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                            className="w-full py-3 px-6 bg-[#0A3D91] hover:bg-[#08306B] text-white font-medium rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
                         >
                             <span>Sign up</span>
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -335,10 +339,10 @@ const SignUp = () => {
 
                         {/* Sign In Link */}
                         <div className="flex items-center justify-between mt-6 text-sm">
-                            <Link to="/login" className="text-[#005482] hover:text-[#70C5D7] font-medium">
+                            <Link to="/login" className="text-[#0A3D91] hover:text-[#08306B] font-medium transition-colors">
                                 Sign in
                             </Link>
-                            <Link to="/forgot-password" className="text-[#005482] hover:text-[#70C5D7]">
+                            <Link to="/forgot-password" className="text-[#0A3D91] hover:text-[#08306B] transition-colors">
                                 Lost password?
                             </Link>
                         </div>

@@ -16,6 +16,7 @@ import Contact from "../pages/Contact/Contact";
 import InvestorConnection from "../pages/InvestorConnection/InvestorConnection";
 import ProductsServices from "../pages/ProductsServices/ProductsServices";
 import PerformersClub from "../pages/PerformersClub/PerformersClub";
+import BusinessCard from "../components/BusinessCard";
 import AddTeam from "../pages/Dashboard/AddTeam";
 import ShowTeamMembers from "../pages/Dashboard/ShowTeamMembers";
 import ShowPerformersClub from "../pages/Dashboard/ShowPerformersClub";
@@ -54,7 +55,7 @@ export const router = createBrowserRouter([
       },
 
       {
-        path: "/Contact",
+        path: "/contact",
         element: <Contact></Contact>,
       },
       {
@@ -66,10 +67,14 @@ export const router = createBrowserRouter([
         path: "/products-services",
         element: <ProductsServices></ProductsServices>,
       },
+              {
+         path: "/performers-club",
+         element: <PerformersClub></PerformersClub>,
+       },
        {
-        path: "/performers-club",
-        element: <PerformersClub></PerformersClub>,
-      },
+         path: "/business-card",
+         element: <BusinessCard></BusinessCard>,
+       },
 
 
  
