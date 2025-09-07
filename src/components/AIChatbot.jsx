@@ -12,7 +12,7 @@ const AIChatbot = () => {
     {
       id: 1,
       type: 'bot',
-      content: 'Hello! I\'m your intelligent AI assistant, ready to help with your business needs. How can I assist you today? 🚀',
+      content: 'Hello! I\'m Noorvia AI, your intelligent business consultant powered by Foxmen Studio. How can I help your business grow today? 🚀',
       timestamp: new Date()
     }
   ]);
@@ -298,11 +298,11 @@ const AIChatbot = () => {
       <button
         onClick={toggleChatbot}
         className="fixed bottom-6 right-6 z-50 bg-[#0A3D91] hover:bg-[#08306B] text-white p-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110 group"
-        aria-label="Open AI Support"
+        aria-label="Open Noorvia AI"
       >
-        <div className="relative">
-          <Bot className="h-10 w-10" />
-          <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-pulse border-2 border-white"></div>
+        <MessageCircle className="h-6 w-6" />
+        <div className="absolute -top-2 -right-2 bg-[#D0A96A] text-[#111827] text-xs font-bold px-2 py-1 rounded-full">
+          Noorvia AI
         </div>
       </button>
     );
@@ -313,16 +313,15 @@ const AIChatbot = () => {
       {/* Chatbot Header */}
       <div className="bg-[#0A3D91] text-white p-4 rounded-t-2xl shadow-2xl flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <div className="bg-[#D0A96A] p-2 rounded-full relative">
+          <div className="bg-[#D0A96A] p-2 rounded-full">
             <Bot className="h-5 w-5 text-[#111827]" />
-            <div className="absolute -top-1 -right-1 w-2 h-2 bg-green-400 rounded-full animate-pulse border border-white"></div>
           </div>
           <div>
-            <h3 className="font-semibold">AI Support</h3>
-            <p className="text-xs text-[#D0A96A]">Intelligent Assistant</p>
+            <h3 className="font-semibold">Noorvia AI</h3>
+            <p className="text-xs text-[#D0A96A]">Powered by Foxmen Studio</p>
             <div className="flex items-center space-x-1 mt-1">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-xs text-green-400">Online</span>
+              <span className="text-xs text-green-400">Enhanced AI</span>
             </div>
           </div>
         </div>

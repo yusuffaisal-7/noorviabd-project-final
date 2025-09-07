@@ -163,79 +163,82 @@ const Home = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-white overflow-hidden transition-all duration-1000 h-[85vh] flex items-center justify-center py-12 sm:py-16">
+      <section className="relative bg-white overflow-hidden transition-all duration-1000 h-[100vh] sm:h-[90vh] lg:h-[85vh] flex items-center justify-center py-8 sm:py-12 lg:py-16">
         
         {/* Background Image in Rounded Box */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div 
-            className="w-full mx-4 sm:mx-6 lg:mx-8 xl:mx-10 h-full my-4 sm:my-6 lg:my-8 xl:my-10 bg-cover bg-center transition-all duration-1000 rounded-3xl sm:rounded-4xl shadow-2xl relative"
+            className="w-full mx-2 sm:mx-4 md:mx-6 lg:mx-8 xl:mx-10 h-full my-2 sm:my-4 md:my-6 lg:my-8 xl:my-10 bg-cover bg-center transition-all duration-1000 rounded-2xl sm:rounded-3xl lg:rounded-4xl shadow-2xl relative"
             style={{
               backgroundImage: `url(${slides[currentSlide].image})`
             }}
           >
-            {/* Black Grey Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-gray-800/50 to-black/60 rounded-3xl sm:rounded-4xl"></div>
+            {/* Enhanced Mobile Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-gray-900/60 to-black/70 sm:from-black/60 sm:via-gray-800/50 sm:to-black/60 rounded-2xl sm:rounded-3xl lg:rounded-4xl"></div>
           </div>
         </div>
         
-        {/* Navigation Arrows - Hidden on mobile, visible on tablet+ */}
+        {/* Navigation Arrows - Mobile friendly */}
         <button
           onClick={prevSlide}
-          className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 rounded-full p-1.5 sm:p-2 transition-all duration-300 hidden sm:block"
+          className="absolute left-1 sm:left-2 md:left-4 top-1/2 transform -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 rounded-full p-2 sm:p-2.5 md:p-3 transition-all duration-300 touch-manipulation"
         >
-          <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6" />
+          <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 text-white" />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 rounded-full p-1.5 sm:p-2 transition-all duration-300 hidden sm:block"
+          className="absolute right-1 sm:right-2 md:right-4 top-1/2 transform -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 rounded-full p-2 sm:p-2.5 md:p-3 transition-all duration-300 touch-manipulation"
         >
-          <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6" />
+          <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 text-white" />
         </button>
 
-        <div className="relative z-20 max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 w-full">
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 w-full">
           <div className="text-center">
-            <div className="flex justify-center mb-4 sm:mb-6 animate-fade-in-up">
+            <div className="flex justify-center mb-3 sm:mb-4 md:mb-6 animate-fade-in-up">
               <img 
                 src="https://res.cloudinary.com/duh7c5x99/image/upload/v1756129371/logofalnnoor_v7rdzp.png" 
                 alt="NoorVia BD Logo" 
-                className="h-24 w-auto sm:h-32 md:h-40 animate-float"
+                className="h-16 w-auto sm:h-24 md:h-32 lg:h-40 animate-float"
               />
             </div>
 
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-3 sm:mb-4 text-white font-montserrat-semibold transition-all duration-1000 animate-fade-in-up animate-delay-200 px-2 drop-shadow-lg">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-2 sm:mb-3 md:mb-4 text-white font-bold transition-all duration-1000 animate-fade-in-up animate-delay-200 px-2 drop-shadow-lg leading-tight">
               {slides[currentSlide].title}
             </h2>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-[#D0A96A] font-montserrat-semibold transition-all duration-1000 animate-fade-in-up animate-delay-400 px-4 drop-shadow-lg">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-4 sm:mb-6 md:mb-8 text-[#D0A96A] font-semibold transition-all duration-1000 animate-fade-in-up animate-delay-400 px-3 sm:px-4 drop-shadow-lg">
               {slides[currentSlide].subtitle}
             </p>
-            <p className="text-sm sm:text-base md:text-lg mb-8 sm:mb-12 text-white max-w-3xl mx-auto leading-relaxed font-montserrat-semibold transition-all duration-1000 animate-fade-in-up animate-delay-600 px-4 drop-shadow-lg">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg mb-6 sm:mb-8 md:mb-10 lg:mb-12 text-white max-w-2xl sm:max-w-3xl mx-auto leading-relaxed font-medium transition-all duration-1000 animate-fade-in-up animate-delay-600 px-3 sm:px-4 drop-shadow-lg">
               {slides[currentSlide].description}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in-up animate-delay-800 px-4">
               <Link
                 to="/contact"
-                className="bg-[#D0A96A] hover:bg-[#B8945A] text-[#111827] px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-montserrat-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl animate-bounce-in text-sm sm:text-base"
+                className="bg-[#D0A96A] hover:bg-[#B8945A] active:bg-[#A68B4A] text-[#111827] px-6 sm:px-8 py-3.5 sm:py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl animate-bounce-in text-sm sm:text-base touch-manipulation min-h-[48px] flex items-center justify-center"
               >
                 {slides[currentSlide].cta1}
               </Link>
               <Link
                 to="/products-services"
-                className="bg-transparent border-2 border-white hover:bg-white hover:text-[#0A3D91] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-montserrat-semibold transition-all duration-300 flex items-center justify-center group animate-bounce-in animate-delay-200 text-sm sm:text-base"
+                className="bg-transparent border-2 border-white hover:bg-white hover:text-[#0A3D91] active:bg-white/80 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center group animate-bounce-in animate-delay-200 text-sm sm:text-base touch-manipulation min-h-[48px] active:scale-95"
               >
                 {slides[currentSlide].cta2}
                 <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
             
-            {/* Slide Indicators */}
-            <div className="flex justify-center mt-6 sm:mt-8 space-x-2">
+            {/* Slide Indicators - Mobile Optimized */}
+            <div className="flex justify-center mt-4 sm:mt-6 md:mt-8 space-x-2 sm:space-x-3">
               {slides.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-                    index === currentSlide ? 'bg-[#D0A96A]' : 'bg-white/50'
+                  className={`w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 rounded-full transition-all duration-300 touch-manipulation ${
+                    index === currentSlide 
+                      ? 'bg-[#D0A96A] scale-110 shadow-lg shadow-[#D0A96A]/50' 
+                      : 'bg-white/50 hover:bg-white/70 active:bg-white/80'
                   }`}
+                  aria-label={`Go to slide ${index + 1}`}
                 />
               ))}
             </div>

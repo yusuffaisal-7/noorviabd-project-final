@@ -177,18 +177,13 @@
 import { useState, useContext, useEffect } from "react";
 import { NavLink, Outlet, useNavigate, useLocation } from "react-router-dom";
 import {
-  Menu,
-  User,
-  Users,
-  Home,
-  LogOut,
-  Shield,
-  UserPlus,
-  Eye,
-  Crown,
-  MessageSquare,
-  Settings
-} from "lucide-react";
+  FaBars,
+  FaUser,
+  FaTasks,
+  FaHome,
+  FaBook,
+  FaSignOutAlt,
+} from "react-icons/fa";
 import Swal from "sweetalert2";
 
 import useAdmin from "../hooks/useAdmin";
@@ -268,11 +263,6 @@ const Dashboard = () => {
           text: "You have successfully logged out.",
           showConfirmButton: false,
           timer: 2000,
-          background: "#FBF8F3",
-          customClass: {
-            title: "text-[#0A3D91] text-xl",
-            content: "text-[#6B7280]",
-          }
         });
         navigate("/");
       })
@@ -283,11 +273,6 @@ const Dashboard = () => {
           title: "Logout Failed",
           text: "Something went wrong while logging out.",
           confirmButtonText: "Try Again",
-          background: "#FBF8F3",
-          customClass: {
-            title: "text-[#0A3D91] text-xl",
-            content: "text-[#6B7280]",
-          }
         });
       });
   };
@@ -297,106 +282,80 @@ const Dashboard = () => {
       to={to}
       onClick={closeSidebar}
       className={({ isActive }) =>
-        `flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 ${
+        `flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
           isActive
-            ? "bg-gradient-to-r from-[#0A3D91] to-[#08306B] text-white shadow-lg"
-            : "text-[#FDF6E9] hover:bg-[#0A3D91]/20 hover:text-white hover:shadow-md"
+            ? "bg-gradient-to-r from-pink-500 to-rose-400 text-white shadow"
+            : "text-white hover:bg-white/10 hover:shadow"
         }`
       }
     >
       {icon}
-      <span className="text-sm font-semibold">{label}</span>
+      <span className="text-sm font-medium">{label}</span>
     </NavLink>
   );
 
   if (isAdminLoading) return <Loading />;
 
   return (
-    <div className="fixed inset-0 flex w-full h-full overflow-hidden bg-[#FDF6E9]">
+    <div className="fixed inset-0 flex w-full h-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
       {/* Mobile Navbar */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 h-16 bg-[#FBF8F3] shadow-lg z-50 flex items-center justify-between px-4 sm:px-6 border-b border-[#E5E0D5]">
+      <div className="md:hidden fixed top-0 left-0 right-0 h-14 bg-white shadow z-50 flex items-center justify-between px-4">
         <button
           onClick={toggleSidebar}
-          className="text-[#0A3D91] text-2xl p-2 rounded-lg hover:bg-[#0A3D91]/10 transition-colors"
+          className="text-rose-500 text-2xl"
           aria-label="Toggle Sidebar"
         >
-          <Menu className="h-6 w-6" />
+          <FaBars />
         </button>
-        <div className="flex items-center gap-2 sm:gap-3">
-          <div className="w-8 h-8 bg-gradient-to-br from-[#0A3D91] to-[#08306B] rounded-lg flex items-center justify-center">
-            <Crown className="h-5 w-5 text-white" />
-          </div>
-          <h2 className="text-base sm:text-lg font-bold text-[#0A3D91] tracking-wide">Dashboard</h2>
-        </div>
+        <h2 className="text-lg font-bold text-rose-500 tracking-wide">Dashboard</h2>
       </div>
 
       {/* Sidebar */}
       <aside
-        className={`fixed lg:static h-full w-64 sm:w-72 lg:w-80 bg-gradient-to-b from-[#0A3D91] to-[#08306B] shadow-2xl transition-transform duration-300 z-40 ${
+        className={`fixed md:static h-full w-64 bg-gradient-to-b from-rose-500 to-pink-400 shadow-lg transition-transform duration-300 z-40 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } lg:translate-x-0`}
+        } md:translate-x-0`}
       >
         <div className="h-full flex flex-col justify-between">
-          <div className="p-4 sm:p-6 lg:p-8">
-            <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#D0A96A] rounded-2xl flex items-center justify-center">
-                <Crown className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
-              </div>
-              <div>
-                <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-wide">Admin Panel</h2>
-                <p className="text-[#D0A96A] text-xs sm:text-sm font-medium">NoorVia BD</p>
-              </div>
-            </div>
-            <nav className="space-y-2 sm:space-y-3">
-              {renderNavLink("/", <Home className="h-4 w-4 sm:h-5 sm:w-5" />, "Home")}
+          <div className="p-6">
+            <h2 className="text-2xl font-extrabold text-white mb-8 tracking-wide">Menu</h2>
+            <nav className="space-y-2">
+              {renderNavLink("/", <FaHome className="text-xl" />, "Home")}
               {user && isAdmin === false && (
                 <>
-                  {renderNavLink("/dashboard/studentProfile", <User className="h-4 w-4 sm:h-5 sm:w-5" />, "Profile")}
+                  {renderNavLink("/dashboard/studentProfile", <FaUser className="text-xl" />, "Profile")}
                 </>
               )}
               {user && isAdmin && (
                 <>
-                  {renderNavLink("/dashboard/manage-users", <Users className="h-4 w-4 sm:h-5 sm:w-5" />, "Manage Users")}
-                  {renderNavLink("/dashboard/AddTeam", <UserPlus className="h-4 w-4 sm:h-5 sm:w-5" />, "Add Team Members")}
-                  {renderNavLink("/dashboard/showTeamMembers", <Eye className="h-4 w-4 sm:h-5 sm:w-5" />, "Show All Members")}
-                  {renderNavLink("/dashboard/showPerformersClub", <Crown className="h-4 w-4 sm:h-5 sm:w-5" />, "Show PerformersClub")}
-                  {renderNavLink("/dashboard/showContact", <MessageSquare className="h-4 w-4 sm:h-5 sm:w-5" />, "Show Contact Data")}
+                  {renderNavLink("/dashboard/manage-users", <FaTasks className="text-xl" />, "Manage Users")}
+                   {renderNavLink("/dashboard/AddTeam", <FaTasks className="text-xl" />, "Add Team Members")}
+                  {renderNavLink("/dashboard/showTeamMembers", <FaTasks className="text-xl" />, "Show All Members")}
+                   {renderNavLink("/dashboard/showPerformersClub", <FaTasks className="text-xl" />, "Show PerformersClub")}
+                   {renderNavLink("/dashboard/showContact", <FaTasks className="text-xl" />, "Show Contact Data")}
                 </>
               )}
             </nav>
           </div>
           {/* User Section */}
-          <div className="border-t border-[#D0A96A]/30 pt-4 pb-4 sm:pt-6 sm:pb-6 px-4 sm:px-6 lg:px-8 bg-[#0A3D91]/20">
-            <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <div className="relative">
-                <img
-                  src={profileImage}
-                  alt={user?.displayName || "User"}
-                  className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl border-3 border-[#D0A96A] shadow-lg"
-                  onError={(e) => (e.target.src = "/default-profile.png")}
-                />
-                {isAdmin && (
-                  <div className="absolute -top-1 -right-1 w-5 h-5 sm:w-6 sm:h-6 bg-[#D0A96A] rounded-full flex items-center justify-center">
-                    <Shield className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-white" />
-                  </div>
-                )}
-              </div>
+          <div className="border-t border-white/20 pt-6 pb-6 px-6 bg-white/10">
+            <div className="flex items-center gap-3 mb-4">
+              <img
+                src={profileImage}
+                alt={user?.displayName || "User"}
+                className="w-12 h-12 rounded-full border-4 border-white shadow"
+                onError={(e) => (e.target.src = "/default-profile.png")}
+              />
               <div className="flex-1 min-w-0">
-                <h3 className="font-bold text-sm sm:text-base lg:text-lg text-white truncate">{user?.displayName || "User"}</h3>
-                <p className="text-xs sm:text-sm text-[#D0A96A] truncate font-medium">{user?.email}</p>
-                {isAdmin && (
-                  <span className="inline-flex items-center gap-1 px-2 py-1 bg-[#D0A96A] text-white text-xs font-semibold rounded-lg mt-1">
-                    <Crown className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
-                    Admin
-                  </span>
-                )}
+                <h3 className="font-semibold text-base text-white truncate">{user?.displayName || "User"}</h3>
+                <p className="text-xs text-gray-100 truncate">{user?.email}</p>
               </div>
             </div>
             <button
               onClick={handleLogout}
-              className="w-full bg-gradient-to-r from-[#B91C1C] to-[#991B1B] text-white py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl hover:from-[#991B1B] hover:to-[#B91C1C] transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3 font-semibold shadow-lg hover:shadow-xl text-sm sm:text-base"
+              className="w-full bg-white/20 text-white py-2 px-4 rounded-lg hover:bg-white/30 transition-all flex items-center justify-center gap-2 font-semibold"
             >
-              <LogOut className="h-4 w-4 sm:h-5 sm:w-5" />
+              <FaSignOutAlt />
               <span>Logout</span>
             </button>
           </div>
@@ -405,8 +364,8 @@ const Dashboard = () => {
 
       {/* Main Content */}
       <main className="flex-1 relative w-full h-full bg-transparent">
-        <div className="absolute inset-0 overflow-auto lg:pt-0 pt-16">
-          <div className="min-h-full w-full p-3 sm:p-4 lg:p-6 xl:p-8">
+        <div className="absolute inset-0 overflow-auto md:pt-0 pt-14">
+          <div className="min-h-full w-full p-4 md:p-8">
             <Outlet />
           </div>
         </div>
@@ -414,7 +373,7 @@ const Dashboard = () => {
 
       {/* Overlay for mobile */}
       {sidebarOpen && (
-        <div className="fixed inset-0 bg-[#0A3D91]/20 backdrop-blur-sm z-30 lg:hidden" onClick={toggleSidebar}></div>
+        <div className="fixed inset-0 bg-black/40 z-30 md:hidden" onClick={toggleSidebar}></div>
       )}
     </div>
   );
