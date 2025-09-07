@@ -724,7 +724,7 @@ const Contact = () => {
     {
       title: 'Partnership Opportunities',
       description: 'Interested in partnerships, collaborations, or joining our network.',
-      contact: '+880 1234-567890',
+      contact: '+880 1763-714299',
       icon: Handshake,
       bg: 'bg-[#D0A96A]/10',
       text: 'text-[#D0A96A]',
@@ -799,8 +799,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-base sm:text-lg font-semibold text-[#111827]">Phone</h3>
-                    <p className="text-xs sm:text-sm text-[#6B7280]">+880 1234-567890</p>
-                    <p className="text-xs sm:text-sm text-[#6B7280]">+880 9876-543210</p>
+                    <p className="text-xs sm:text-sm text-[#6B7280]">+880 1763-714299</p>
+                    <p className="text-xs sm:text-sm text-[#6B7280]">WhatsApp Available</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3 sm:space-x-4">

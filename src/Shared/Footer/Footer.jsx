@@ -79,7 +79,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 text-[#D0A96A]">Contact Info</h3>
             <ul className="space-y-2 text-[#6B7280]">
               <li>Email: info@noorvia.bd</li>
-              <li>Phone: +880 1234-567890</li>
+              <li>Phone: +880 1763-714299</li>
               <li>Location: Dhaka, Bangladesh</li>
             </ul>
           </div>
